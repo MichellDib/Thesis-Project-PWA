@@ -25,6 +25,50 @@ export const fetchImageSearch = async (query, numImages) => {
     }
   };
 
+  
+
+export const fetchWeather = async (city) => {
+  const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`;
+  const options = {
+    method: "GET",
+    headers: {
+      "content-type": "application/octet-stream",
+      "X-RapidAPI-Key": "0de2a7b9ccmsh7673471c80f80c2p164149jsn52836f6b3351",
+      "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const fetchTweets = async (query) => {
+  const url =
+    "https://twitter154.p.rapidapi.com/user/tweets?username=CDawgVA&limit=100&include_replies=true";
+  const options = {
+    method: "GET",
+    headers: {
+      "content-type": "application/octet-stream",
+      "X-RapidAPI-Key": "0de2a7b9ccmsh7673471c80f80c2p164149jsn52836f6b3351",
+      "X-RapidAPI-Host": "twitter154.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const fetchSpellCheck = async (text) => {
   const url = `${API_ENDPOINT}?text=${encodeURIComponent(text)}`;
 
@@ -47,6 +91,5 @@ export const fetchSpellCheck = async (text) => {
     console.error(error);
     throw error;
   }
-
-
 };
+export default fetchImageSearch, fetchWeather, fetchTweets, fetchSpellCheck;
