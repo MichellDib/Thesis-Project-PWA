@@ -6,6 +6,7 @@ class TweetPresenter extends Component {
   state = {
     loading: false,
     error: null,
+    setStateTime: null,
     renderTime: null,
     results: null,
   };
@@ -25,11 +26,12 @@ class TweetPresenter extends Component {
         const setStateEnd = performance.now();
         const fetchTime = fetchEnd - fetchStart;
         const setStateTime = setStateEnd - setStateStart;
+        console.log(setStateTime);
         const renderTime = setStateEnd - fetchStart;
         console.log("FETCH TIME: " + fetchTime);
         console.log("SET STATE TIME: " + setStateTime);
         console.log("RENDER TIME: " + renderTime);
-        this.setState({ renderTime });
+        this.setState({ renderTime, setStateTime });
       });
     } catch (error) {
       console.error(error);
@@ -39,12 +41,13 @@ class TweetPresenter extends Component {
   
 
   render() {
-    const { results, loading, error, renderTime } = this.state;
+    const { results, loading, error, renderTime, setStateTime } = this.state;
     return (
       <TweetView
         loading={loading}
         error={error}
         onSubmit={this.handleSubmit}
+        setStateTime={setStateTime}
         renderTime={renderTime}
         results={results}
       />

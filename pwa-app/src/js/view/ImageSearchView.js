@@ -27,6 +27,7 @@ const ImageSearchView = ({
           Time to render images: {Math.round((performance.now() - renderStartTime) * 100) / 100} ms
         </p>
       )}
+      
       <form onSubmit={onSubmit}>
         <input type="text" value={query} onChange={onInputChange} />
         <input type="number" value={numImages} onChange={onNumImagesChange} />
@@ -42,9 +43,9 @@ const ImageSearchView = ({
           <p>{result.title}</p>
         </div>
       ))}
-      
     </div>
   );
 };
+
 
 export default ImageSearchView;

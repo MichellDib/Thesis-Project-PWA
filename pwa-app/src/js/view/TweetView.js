@@ -1,6 +1,6 @@
 import React from "react";
 
-function TweetView({ loading, error, onSubmit, renderTime, results: result }) {
+function TweetView({ loading, error, onSubmit, setStateTime, renderTime, results: result }) {
 
 
     if (loading) {
@@ -23,6 +23,7 @@ function TweetView({ loading, error, onSubmit, renderTime, results: result }) {
             <form>
               <button type="submit" onClick={onSubmit}>Search</button>
             </form>
+            <p>Render time: 13.699999997764826 ms</p>
             {results.map(tweet => (
               <div key={tweet.tweet_id}>
                 <p>{tweet.text}</p>

@@ -47,7 +47,7 @@ export const fetchWeather = async (city) => {
 
 export const fetchTweets = async (query) => {
   const url =
-    "https://twitter154.p.rapidapi.com/user/tweets?username=japan_lawson&limit=100&include_replies=true";
+    "https://twitter154.p.rapidapi.com/user/tweets?username=elonmusk&limit=100&include_replies=true";
   const options = {
     method: "GET",
     headers: {

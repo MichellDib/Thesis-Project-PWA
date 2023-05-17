@@ -31,7 +31,7 @@ class ImageSearchPresenter extends Component {
       const end = performance.now();
       const renderTime = end - start;
 
-      const multiplier = 200;
+      const multiplier = 90;
       const multipliedResults = results.concat(...Array.from({ length: multiplier - 1 }, () => results));
       this.setState({ results: multipliedResults, loading: false, error: null, renderTime});
 

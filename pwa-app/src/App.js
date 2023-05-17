@@ -6,14 +6,15 @@ import ImageSearchPresenter from './js/Presenter/ImageSearchPresenter';
 import TweetPresenter from './js/Presenter/TweetPresenter';
 import TextSearchPresenter from './js/Presenter/TextSearchPresenter';
 import TextSearchView from './js/view/TextSearchView';
+import CameraPresenter from './js/Presenter/CameraPresenter';
+import GeolocationPresenter from './js/Presenter/GeolocationPresenter';
 
 function App() {
 
   return (
     <div>
-      <TextSearchPresenter></TextSearchPresenter>
+      <TweetPresenter></TweetPresenter>
     </div>
-
   );
 }
 

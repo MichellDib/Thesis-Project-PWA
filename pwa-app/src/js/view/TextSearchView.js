@@ -15,7 +15,7 @@ const TextSearchView = ({
   return (
     <div>
       <input type="text" value={searchTerm} onChange={onSearchTermChange} />
-      <input type="text" value={text} onChange={onTextChange} />
+      <input type="text" autocomplete="off"  onChange={onTextChange} />
       <button onClick={onSearch}>Search</button>
       {loading ? (
         <div>Loading...</div>
